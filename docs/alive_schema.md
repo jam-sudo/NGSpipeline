@@ -38,6 +38,8 @@ Index = Ensembl gene id **with version** exactly as kb writes it in `t2g.txt` / 
 
 ## Data card for ALIVE
 
+Data card values: `perturbation_key = "gene"`, `control_value = "non-targeting"` — the same field name and control label as the authors' h5ad ALIVE was built on, so no ALIVE-side change is needed.
+
 ```json
 {
   "h5ad": "results/alive/<sample>.h5ad",
