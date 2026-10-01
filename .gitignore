@@ -13,3 +13,15 @@ null/
 !tests/data/
 !tests/data/**
 
+# Local planning and validation records
+/PLAN.md
+/docs/**
+
+# Public user documentation
+!/docs/README.md
+!/docs/CONTRIBUTING.md
+!/docs/usage.md
+!/docs/output.md
+!/docs/alive_schema.md
+!/docs/images/
+!/docs/images/**
