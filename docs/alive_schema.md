@@ -16,17 +16,17 @@ Consumer: ALIVE `src/alive/data/replogle.py` (`build_index`, `ad.read_h5ad(..., 
 
 ## obs columns (exact, in this order)
 
-| column                                    | dtype   | meaning                                                                                                                                            | consumed by ALIVE                 |
-| ----------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| `cell_barcode`                            | str     | 16-nt 10x cell barcode (also the obs index)                                                                                                        | no (index positional only)        |
-| `gene`                                    | str     | perturbation label: `target_gene` of the assigned vector, or `non-targeting`; with `--keep_nonsingle`, `multi` / `unassigned` for non-single cells | **yes** (`perturbation_key`)      |
-| `guide_id`                                | str     | assigned vector id (`sgID_A                                                                                                                        | sgID_B` for dual-guide libraries) | no  |
-| `target_gene`                             | str     | target gene of the vector (same as `gene` for single cells)                                                                                        | no                                |
-| `assignment_status`                       | str     | `single` / `multi` / `unassigned` / `no_guide_reads`                                                                                               | no                                |
-| `assignment_confidence`                   | float32 | mixture posterior of the assigned vector, or top-1/top-2 UMI ratio for the threshold method (`inf` when top-2 = 0)                                 | no                                |
-| `assignment_method`                       | str     | `threshold` / `mixture`                                                                                                                            | no                                |
-| `top1_umi`, `top2_umi`, `total_guide_umi` | int32   | guide UMI evidence from `assignment.tsv`                                                                                                           | no                                |
-| `sample_id`                               | str     | samplesheet `sample_id`                                                                                                                            | no                                |
+| column                                    | dtype   | meaning                                                                                                                                            | consumed by ALIVE            |
+| ----------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| `cell_barcode`                            | str     | 16-nt 10x cell barcode (also the obs index)                                                                                                        | no (index positional only)   |
+| `gene`                                    | str     | perturbation label: `target_gene` of the assigned vector, or `non-targeting`; with `--keep_nonsingle`, `multi` / `unassigned` for non-single cells | **yes** (`perturbation_key`) |
+| `guide_id`                                | str     | assigned vector id (`sgID_A\|sgID_B` for dual-guide libraries)                                                                                     | no                           |
+| `target_gene`                             | str     | target gene of the vector (same as `gene` for single cells)                                                                                        | no                           |
+| `assignment_status`                       | str     | `single` / `multi` / `unassigned` / `no_guide_reads`                                                                                               | no                           |
+| `assignment_confidence`                   | float32 | mixture posterior of the assigned vector, or top-1/top-2 UMI ratio for the threshold method (`inf` when top-2 = 0)                                 | no                           |
+| `assignment_method`                       | str     | `threshold` / `mixture`                                                                                                                            | no                           |
+| `top1_umi`, `top2_umi`, `total_guide_umi` | int32   | guide UMI evidence from `assignment.tsv`                                                                                                           | no                           |
+| `sample_id`                               | str     | samplesheet `sample_id`                                                                                                                            | no                           |
 
 ## Pooled h5ad (`--pool_alive`, decision 011)
 
