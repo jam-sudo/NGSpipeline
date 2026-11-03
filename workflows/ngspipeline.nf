@@ -92,7 +92,7 @@ workflow NGSPIPELINE {
     def ch_alive_in = GEX_QUANT.out.count_dir.join(GUIDE_ASSIGN.out.assignment)
     TO_ALIVE_H5AD(ch_alive_in.map { meta, count_dir, assignment -> [ meta, [ meta.id ], count_dir, assignment ] }, keep_nonsingle)
 
-    // Pooled h5ad across samples (GEM groups) for ALIVE (docs/decisions/011): obs index <barcode>-<sample_id>
+    // Pooled h5ad across samples (GEM groups) for ALIVE: obs index <barcode>-<sample_id>
     def ch_pooled = pool_alive
         ? ch_alive_in.toSortedList { a, b -> a[0].id <=> b[0].id }
             .filter { it.size() > 1 }

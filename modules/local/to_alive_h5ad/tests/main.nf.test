@@ -1,6 +1,6 @@
 nextflow_process {
 
-    name "TO_ALIVE_H5AD single-sample and pooled (T-14, decision 011)"
+    name "TO_ALIVE_H5AD single-sample and pooled"
     script "modules/local/to_alive_h5ad/main.nf"
     process "TO_ALIVE_H5AD"
     tag "alive"

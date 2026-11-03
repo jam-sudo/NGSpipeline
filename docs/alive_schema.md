@@ -1,6 +1,6 @@
 # ALIVE h5ad schema (`alive/<sample>.h5ad`)
 
-Produced by `bin/to_alive_h5ad.py` (`TO_ALIVE_H5AD`, T-14) from the GEX count matrix (`counts/<sample>/counts_filtered/`) and `guides/<sample>/assignment.tsv`.
+Produced by `bin/to_alive_h5ad.py` (`TO_ALIVE_H5AD`) from the GEX count matrix (`counts/<sample>/counts_filtered/`) and `guides/<sample>/assignment.tsv`.
 Consumer: ALIVE `src/alive/data/replogle.py` (`build_index`, `ad.read_h5ad(..., backed="r")` at line 241; schema dataclass `DatasetSchema` lines 81–100; CLI `prepare` in `src/alive/cli.py` 330–397; data-card keys in ALIVE `README.md` 116–145). Read-only inspection on 2026-09-15; ALIVE code is never modified by this pipeline.
 
 ## What ALIVE requires
@@ -11,7 +11,7 @@ Consumer: ALIVE `src/alive/data/replogle.py` (`build_index`, `ad.read_h5ad(..., 
 | `var` index                          | non-empty unique strings when `gene_id_key` is null (`replogle.py` 298–325)                                                                                                                                 | Ensembl gene id from the kb `t2g` (data card `gene_id_key: null`); `var["gene_name"]` symbol, `var["gene_id"]` copy    |
 | `.X`                                 | shape matches `var`, every value finite and ≥ 0; sparse CSR preferred; raw counts intended (`replogle.py` 331–352, 429–527; `preprocess.py` 74–99; COMPOSE writer requires integers, `fit_role.py` 605–610) | raw UMI counts, CSR `float32`, integer-valued                                                                          |
 | other `obs`, `uns`, `obsm`, `layers` | ignored                                                                                                                                                                                                     | see below                                                                                                              |
-| cell QC                              | none applied by ALIVE (no `mito`/`min_genes`/doublet filters in `src/alive`)                                                                                                                                | cells = bustools-filtered GEX cells with a `single` assignment (006)                                                   |
+| cell QC                              | none applied by ALIVE (no `mito`/`min_genes`/doublet filters in `src/alive`)                                                                                                                                | cells = bustools-filtered GEX cells with a `single` assignment                                                         |
 | eligibility                          | labels with `< min_cells` cells or without an external sequence are excluded by ALIVE and recorded in `index.exclusions` (`replogle.py` 374–382)                                                            | not the pipeline's concern; counts per label are in `uns["assignment"]`                                                |
 
 ## obs columns (exact, in this order)
@@ -28,7 +28,7 @@ Consumer: ALIVE `src/alive/data/replogle.py` (`build_index`, `ad.read_h5ad(..., 
 | `top1_umi`, `top2_umi`, `total_guide_umi` | int32   | guide UMI evidence from `assignment.tsv`                                                                                                           | no                           |
 | `sample_id`                               | str     | samplesheet `sample_id`                                                                                                                            | no                           |
 
-## Pooled h5ad (`--pool_alive`, decision 011)
+## Pooled h5ad (`--pool_alive`)
 
 `alive/pooled.h5ad` concatenates every sample of the samplesheet (same reference index required). obs columns are identical; the obs index becomes `<cell_barcode>-<sample_id>` because 10x barcodes repeat across GEM groups. `uns['alive_schema']['obs_index']`, `uns['assignment']['per_sample']` and `uns['provenance']['samples']` describe the composition. Single-sample files are byte-for-byte unchanged by this feature. Each h5ad has a `<id>.alive_summary.json` sidecar (cells, genes, labels, status counts, first obs ids).
 
@@ -57,4 +57,4 @@ Data card values: `perturbation_key = "gene"`, `control_value = "non-targeting"`
 }
 ```
 
-Checked by `bin/check_alive_schema.py <h5ad>` (T-14 DoD): obs columns and dtypes equal this table, `X` finite/non-negative/integer-valued, no blank `gene`, at least one `non-targeting` cell.
+Checked by `bin/check_alive_schema.py <h5ad>`: obs columns and dtypes equal this table, `X` finite/non-negative/integer-valued, no blank `gene`, at least one `non-targeting` cell.

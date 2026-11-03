@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the -profile test dataset from the real Perturb-seq sample (T-10).
+"""Build the -profile test dataset from the real Perturb-seq sample.
 
 Subsampling is by cell barcode, then by UMI family: for a selected barcode a
 read is kept iff hash(barcode+UMI) falls below a fraction, so every read of a

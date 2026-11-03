@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic two-sample GEX + assignment fixtures for the TO_ALIVE_H5AD pooling test (docs/decisions/011).
+"""Deterministic two-sample GEX + assignment fixtures for the TO_ALIVE_H5AD pooling test.
 
 Sample s1: 4 cells (c1 single GENEA, c2 single non-targeting, c3 multi, c4 no guide reads); sample s2: 3 cells
 (c1 single GENEB — same barcode as s1/c1 on purpose, c5 single GENEA, c6 unassigned). Same 3-gene index.

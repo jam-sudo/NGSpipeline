@@ -1,6 +1,6 @@
 nextflow_process {
 
-    name "GUIDE_ASSIGN on a synthetic guide matrix (T-13 DoD)"
+    name "GUIDE_ASSIGN on a synthetic guide matrix"
     script "modules/local/guide_assign/main.nf"
     process "GUIDE_ASSIGN"
     tag "assign"

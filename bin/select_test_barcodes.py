@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Select cell and background barcodes for the test profile (T-10).
+"""Select cell and background barcodes for the test profile.
 
 Inputs: the authors' per-cell table for one GEM group (extracted from the
 published h5ad), one R1 FASTQ of the same GEM group (to find background

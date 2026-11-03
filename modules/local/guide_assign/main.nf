@@ -1,4 +1,4 @@
-// Assign a guide (vector) to each GEX-called cell from the kite guide counts (T-13; bin/guide_assign.py).
+// Assign a guide (vector) to each GEX-called cell from the kite guide counts (bin/guide_assign.py).
 process GUIDE_ASSIGN {
     tag "$meta.id"
     label 'process_low'

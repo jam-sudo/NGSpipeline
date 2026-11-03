@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Per-lane concordance of the pipeline's assignment with the authors' gem_group cells (T-14c / docs/01 per-lane table).
+# Per-lane concordance of the pipeline's assignment with the authors' gem_group cells.
 # Usage: bin/compare_lanes.sh <results_dir> <authors_dir with gg<N>_cells.tsv> <out_dir> <min_umi> lane1 lane2 ...
 # Each lane's sample is replogle_k562_essential_lane<N>; reads results_dir/guides/<sample>/assignment.tsv and counts/<sample>/counts_{un,}filtered barcodes.
 set -euo pipefail

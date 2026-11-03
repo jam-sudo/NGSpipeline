@@ -23,11 +23,11 @@ workflow GUIDE_QUANT {
 
     GUIDE_INDEX(ch_library)
 
-    // 10x 3' v3 feature-barcode reads carry the second barcode variant: kite:10xFB translates them (001, 005)
+    // 10x 3' v3 feature-barcode reads carry the second barcode variant: kite:10xFB translates them
     def kite_mode = technology.toUpperCase() == '10XV3' ? 'kite:10xFB' : 'kite'
     GUIDE_COUNT(ch_reads, GUIDE_INDEX.out.index, GUIDE_INDEX.out.t2g, technology, kite_mode)
 
-    // Checks (T-12 DoD): feature columns == unique protospacers; guide barcodes vs GEX barcodes
+    // Checks: feature columns == unique protospacers; guide barcodes vs GEX barcodes
     def n_features = GUIDE_INDEX.out.features.map { f -> f.readLines().size() }
     def ch_stats = GUIDE_COUNT.out.matrix
         .join(GUIDE_COUNT.out.barcodes)
