@@ -3,15 +3,22 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v1.1.0dev - [unreleased]
+## v1.0.4 - [2026-11-02]
+
+Repository-hygiene patch and the first release archived on Zenodo; no change to pipeline logic, parameters or outputs.
 
 ### `Added`
 
-### `Fixed`
+- `CITATION.cff` with the citation metadata used for the Zenodo record.
 
-### `Dependencies`
+### `Changed`
 
-### `Deprecated`
+- Comments, docstrings, test names and docs no longer reference internal task ids or documents that are not in the repository; the slurm and awsbatch error messages and the `--help` text of the cluster options are plain instructions.
+- `assets/test_data/README.md` shows the regeneration command with placeholder paths.
+
+### `Removed`
+
+- `.github/ISSUE_TEMPLATE/config.yml`, which linked a chat channel that does not exist.
 
 ## v1.0.3 - [2026-10-28]
 
