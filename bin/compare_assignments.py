@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare the pipeline's per-cell guide assignment with the authors' published identities (T-16).
+"""Compare the pipeline's per-cell guide assignment with the authors' published identities.
 
 Inputs: assignment.tsv (guide_assign.py), the authors' per-cell table for the same GEM group
 (barcode16, sgID_AB, gene; e.g. extracted from the published h5ad obs), and optionally the GEX

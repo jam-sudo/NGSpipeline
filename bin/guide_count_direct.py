@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent check of kite guide counts by direct protospacer matching (docs/decisions/005).
+"""Independent check of kite guide counts by direct protospacer matching.
 
 Not a pipeline step. For each read pair: cell barcode = R1[:16] translated FB->GEX with the
 10x map, UMI = R1[16:28]; the protospacer is looked up as the 20-mer at every offset in a

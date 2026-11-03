@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Regenerate assets/test_data from the original FASTQs (T-10). Deterministic: sha256 of outputs is stable.
+# Regenerate assets/test_data from the original FASTQs. Deterministic: sha256 of outputs is stable.
 # Usage: bin/make_test_data.sh <fastq_dir> <ensembl_primary_assembly.fa.gz> <ensembl.gtf.gz> <library_pairs.csv> [outdir]
 #   fastq_dir must contain <run>_1.fastq.gz / <run>_2.fastq.gz for every run in assets/test_data/runs_lane4.tsv
 set -euo pipefail

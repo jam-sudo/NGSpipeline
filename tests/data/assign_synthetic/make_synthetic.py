@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synthetic guide-count matrix for the GUIDE_ASSIGN unit test (T-13 DoD). Run from the repo root.
+"""Synthetic guide-count matrix for the GUIDE_ASSIGN unit test. Run from the repo root.
 
 Two vectors V1 (guides G1,G2) and V2 (G3,G4). 24 clearly positive cells (12 per vector, 40-60 UMIs,
 1-3 UMIs of the other vector), 26 background cells (0-3 UMIs), and five edge cells whose expected

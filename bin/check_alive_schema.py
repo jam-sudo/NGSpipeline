@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify an ALIVE h5ad against docs/alive_schema.md (T-14 DoD). Exit 1 on any mismatch."""
+"""Verify an ALIVE h5ad against docs/alive_schema.md. Exit 1 on any mismatch."""
 import sys, numpy as np, anndata as ad, scipy.sparse as sp
 EXPECTED = ["cell_barcode", "gene", "guide_id", "target_gene", "assignment_status", "assignment_confidence", "assignment_method",
             "top1_umi", "top2_umi", "total_guide_umi", "sample_id"]

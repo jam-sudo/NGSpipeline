@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# T-21: prove that `-resume` re-executes only the interrupted process and everything downstream of it.
+# Prove that `-resume` re-executes only the interrupted process and everything downstream of it.
 # 1) run the test profile, kill Nextflow as soon as the quantification process (KALLISTOBUSTOOLS_COUNT) is submitted,
 # 2) re-run with -resume, 3) tabulate CACHED vs executed tasks from the two execution traces.
 # Usage: bin/resume_check.sh <outdir> [profile]   (default profile: test,docker)

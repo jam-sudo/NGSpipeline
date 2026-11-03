@@ -1,4 +1,4 @@
-// Build a kallisto|bustools "kite" feature index from the guide library (docs/decisions/005).
+// Build a kallisto|bustools "kite" feature index from the guide library.
 // Every protospacer becomes a feature; kb ref --workflow kite adds all Hamming-distance-1
 // variants so one sequencing error in the protospacer still counts.
 process GUIDE_INDEX {

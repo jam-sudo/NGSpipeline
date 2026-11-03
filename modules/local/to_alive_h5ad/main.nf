@@ -1,5 +1,5 @@
-// Merge GEX counts + guide assignment into the ALIVE-ready h5ad (T-14; bin/to_alive_h5ad.py, docs/alive_schema.md).
-// One sample → <id>.h5ad; several samples (samples/counts_dir/assignment lists in the same order) → pooled h5ad (docs/decisions/011).
+// Merge GEX counts + guide assignment into the ALIVE-ready h5ad (bin/to_alive_h5ad.py, docs/alive_schema.md).
+// One sample → <id>.h5ad; several samples (samples/counts_dir/assignment lists in the same order) → pooled h5ad.
 process TO_ALIVE_H5AD {
     tag "$meta.id"
     label 'process_low'
