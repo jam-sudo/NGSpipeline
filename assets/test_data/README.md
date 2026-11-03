@@ -1,6 +1,6 @@
 # Test data (`-profile test`)
 
-Source: Replogle et al. 2022 (Cell; PMC9380471), K562 day-6 essential-scale Perturb-seq, GEM group **lane_4** — SRA BioProject PRJNA831566, the 12 runs listed in `runs_lane4.tsv` (8 GEX mRNA runs, 4 sgRNA runs; md5 from the ENA filereport). Cell/guide ground truth: `K562_essential_raw_singlecell_01.h5ad` (Figshare 20029387, CC BY 4.0), `obs` rows with `gem_group == 4`. Guide library: paper Table S1 (`NIHMS1812939-supplement-11.xlsx`, sheet `TabB_K562_day6_library`). Reference: Ensembl release 116 GRCh38 primary assembly + GTF. Design and rationale: `docs/decisions/008-test-data-design.md`.
+Source: Replogle et al. 2022 (Cell; PMC9380471), K562 day-6 essential-scale Perturb-seq, GEM group **lane_4** — SRA BioProject PRJNA831566, the 12 runs listed in `runs_lane4.tsv` (8 GEX mRNA runs, 4 sgRNA runs; md5 from the ENA filereport). Cell/guide ground truth: `K562_essential_raw_singlecell_01.h5ad` (Figshare 20029387, CC BY 4.0), `obs` rows with `gem_group == 4`. Guide library: paper Table S1 (`NIHMS1812939-supplement-11.xlsx`, sheet `TabB_K562_day6_library`). Reference: Ensembl release 116 GRCh38 primary assembly + GTF.
 
 ## Files
 

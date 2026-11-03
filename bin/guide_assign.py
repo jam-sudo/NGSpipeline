@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Per-cell guide assignment from a cells x features guide-count matrix (T-13).
+"""Per-cell guide assignment from a cells x features guide-count matrix.
 
 Counts are aggregated per *vector* (library column `vector_id`; a guide is its own vector
 when the column is absent) so dual-guide libraries are assigned at the vector level.
@@ -10,7 +10,7 @@ Methods
   mixture    per vector, a two-component mixture on y = log2(UMI + 1) over cells with UMI > 0:
              background ~ Poisson(lambda) (continuous pmf) and positive ~ Normal(mu, sigma),
              fit by EM with seeded random restarts (best log-likelihood kept), following
-             Replogle et al. 2020/2022 (docs/decisions/001). A cell carries the vector when the
+             Replogle et al. 2020/2022. A cell carries the vector when the
              posterior of the positive component > 0.5. Vectors with fewer than --min-cells-fit
              non-zero cells cannot be fit and fall back to `UMI >= --min-umi` for that vector (posterior NaN).
              single = exactly one vector; multi = two or more; unassigned = none.

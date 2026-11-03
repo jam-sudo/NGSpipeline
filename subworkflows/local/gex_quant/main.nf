@@ -5,7 +5,7 @@
     Reference: either a prebuilt kb index directory (--reference_index, containing
     *.idx and t2g.txt) or --fasta + --gtf built in-pipeline by KALLISTOBUSTOOLS_REF.
     Quantification: KALLISTOBUSTOOLS_COUNT (standard workflow, bustools cell filter via
-    ext.args). Output is the quantifier's native directory (docs/decisions/002).
+    ext.args). Output is the quantifier's native directory.
 */
 
 include { KALLISTOBUSTOOLS_REF   } from '../../../modules/nf-core/kallistobustools/ref/main'
@@ -52,7 +52,7 @@ workflow GEX_QUANT {
     )
 
     // Cells x genes dimensions from the filtered matrix header (Matrix Market: rows cols nnz).
-    // Logged per sample; also emitted for MultiQC custom content (T-15) and checks (T-11 DoD).
+    // Logged per sample; also emitted for MultiQC custom content and checks.
     def ch_dims = KALLISTOBUSTOOLS_COUNT.out.count
         .map { meta, count_dir ->
             def mtx = file("${count_dir}/counts_filtered/cells_x_genes.mtx")

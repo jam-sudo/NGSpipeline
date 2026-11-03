@@ -1,4 +1,4 @@
-// Count guide (sgRNA) UMIs per cell with kallisto|bustools kite (docs/decisions/005).
+// Count guide (sgRNA) UMIs per cell with kallisto|bustools kite.
 // For 10x 3' v3 the feature-barcode library carries the other barcode variant of each gel bead;
 // `kite:10xFB` translates it to the gene-expression barcode so the matrix joins directly to GEX.
 process GUIDE_COUNT {

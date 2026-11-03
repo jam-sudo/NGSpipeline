@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Merge the GEX count matrix and the per-cell guide assignment into an ALIVE-ready h5ad (T-14).
+"""Merge the GEX count matrix and the per-cell guide assignment into an ALIVE-ready h5ad.
 
 ALIVE (github.com/jam-sudo/alive, src/alive/data/replogle.py) reads `.X` as raw counts, groups
 cells by exact equality of one obs column (the data card's `perturbation_key`, here `gene`)
 with one control label (`non-targeting`), and aborts on NaN/blank labels. It applies no cell
-QC and ignores other obs columns. Therefore (docs/decisions/006) cells whose assignment status
+QC and ignores other obs columns. Therefore cells whose assignment status
 is not `single` are excluded from the h5ad by default and reported in `uns['assignment']`;
 `--keep-nonsingle` keeps them with `gene` set to the status (`multi` / `unassigned`).
 
 obs columns are defined in docs/alive_schema.md and must match exactly.
 
-Pooling (docs/decisions/011): with several --sample/--counts-dir/--assignment triples (positional
+Pooling: with several --sample/--counts-dir/--assignment triples (positional
 match, names checked) all cells are concatenated into one h5ad; the obs index becomes
 `<barcode>-<sample_id>` because 10x barcodes are only unique within a GEM group. With a single
 sample the index stays the bare barcode, so single-sample outputs are unchanged.
@@ -133,7 +133,7 @@ def main():
                                "control_cells": int((obs["gene"] == CONTROL_LABEL).sum())}
     if pooled:
         adata.uns["assignment"]["per_sample"] = per_sample
-    # single-sample uns is kept exactly as before 011 so single-sample h5ad bytes (docs/03 hashes) are unchanged
+    # single-sample uns is kept exactly as before pooling existed, so single-sample h5ad bytes are unchanged
     adata.uns["provenance"] = {"pipeline": "jam-sudo/ngspipeline", "version": a.pipeline_version, "sample": a.sample[0], "counts_subdir": sub_used[0]}
     if pooled:
         adata.uns["provenance"].update({"sample": "pooled", "samples": list(a.sample), "counts_subdir": sub_used, "pooled": True})

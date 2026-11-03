@@ -139,7 +139,7 @@
             "title": "Cluster / cloud execution options",
             "type": "object",
             "fa_icon": "fas fa-server",
-            "description": "Only used with -profile slurm (T-30) or awsbatch (T-31). Set by the human per site; nothing here has a default.",
+            "description": "Only used with -profile slurm or awsbatch. Set them for your site; nothing here has a default.",
             "properties": {
                 "slurm_partition": {
                     "type": "string",

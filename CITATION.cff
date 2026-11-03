@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this pipeline, please cite it using these metadata."
+title: "ngspipeline: Perturb-seq raw reads to ALIVE-ready h5ad"
+type: software
+authors:
+  - given-names: Jae Min
+    family-names: Yoon
+abstract: >-
+  Nextflow DSL2 pipeline for 10x Genomics Perturb-seq: FASTQ to gene-expression and
+  sgRNA count matrices (kallisto|bustools, kb kite), per-cell guide assignment
+  (threshold or mixture) and an AnnData h5ad ready for ALIVE.
+keywords:
+  - Perturb-seq
+  - CRISPR screen
+  - single-cell RNA-seq
+  - Nextflow
+  - kallisto
+license: MIT
+repository-code: "https://github.com/jam-sudo/ngspipeline"

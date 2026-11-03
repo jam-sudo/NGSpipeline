@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build a prebuilt kallisto|bustools reference for --reference_index (docs/decisions/002).
+# Build a prebuilt kallisto|bustools reference for --reference_index.
 # Uses the kallisto binary bundled in the nf-core kallistobustools module container, so the
 # index version matches what KALLISTOBUSTOOLS_COUNT expects (kb-python 0.28.2).
 # Usage: bin/build_reference_index.sh <cdna.fa.gz> <ncrna.fa.gz> <outdir> [threads]

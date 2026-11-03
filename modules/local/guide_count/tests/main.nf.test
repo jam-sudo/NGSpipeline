@@ -1,6 +1,6 @@
 nextflow_workflow {
 
-    name "GUIDE_INDEX + GUIDE_COUNT on synthetic reads (T-12 DoD)"
+    name "GUIDE_INDEX + GUIDE_COUNT on synthetic reads"
     script "modules/local/guide_count/tests/guide_synthetic.nf"
     workflow "GUIDE_SYNTHETIC"
     tag "guide"
