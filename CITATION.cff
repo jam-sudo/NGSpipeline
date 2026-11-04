@@ -15,5 +15,6 @@ keywords:
   - single-cell RNA-seq
   - Nextflow
   - kallisto
+doi: 10.5281/zenodo.23933776
 license: MIT
 repository-code: "https://github.com/jam-sudo/ngspipeline"

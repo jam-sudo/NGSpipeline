@@ -10,11 +10,12 @@
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
 [![GitHub release](https://img.shields.io/github/v/release/jam-sudo/ngspipeline)](https://github.com/jam-sudo/ngspipeline/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23933776.svg)](https://doi.org/10.5281/zenodo.23933776)
 [![Launch on Seqera Platform](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Seqera%20Platform-%234256e7)](https://cloud.seqera.io/launch?pipeline=https://github.com/jam-sudo/ngspipeline)
 
 ## Introduction
 
-**Latest release: tag [`1.0.4`](https://github.com/jam-sudo/ngspipeline/releases/tag/1.0.4)** (run it with `-r 1.0.4`); development continues on `dev`.
+**Latest release: tag [`1.0.5`](https://github.com/jam-sudo/ngspipeline/releases/tag/1.0.5)** (run it with `-r 1.0.5`); development continues on `dev`.
 
 **jam-sudo/ngspipeline** turns raw Perturb-seq reads into an analysis-ready dataset for [ALIVE](https://github.com/jam-sudo/alive): FASTQ → gene-expression (GEX) and sgRNA count matrices → per-cell guide assignment → an ALIVE-ready `.h5ad`. It is a Nextflow DSL2 pipeline built on the nf-core template and nf-core modules; the four steps that have no nf-core module are hand-written local modules.
 
@@ -66,11 +67,11 @@ docker info
 Run the released pipeline on the bundled real-read test data before using your own inputs:
 
 ```bash
-NXF_VER=25.10.4 nextflow run jam-sudo/ngspipeline -r 1.0.4 \
+NXF_VER=25.10.4 nextflow run jam-sudo/ngspipeline -r 1.0.5 \
   -profile test,docker --outdir results/test
 ```
 
-On Apple Silicon, add `emulate_amd64` to the profiles (`test,docker,emulate_amd64`) to explicitly select the amd64 containers. For a local checkout, replace `jam-sudo/ngspipeline -r 1.0.4` with `.`; this runs the checked-out code, including development changes. Keep the work directory under your home directory when using Colima so containers can access it.
+On Apple Silicon, add `emulate_amd64` to the profiles (`test,docker,emulate_amd64`) to explicitly select the amd64 containers. For a local checkout, replace `jam-sudo/ngspipeline -r 1.0.5` with `.`; this runs the checked-out code, including development changes. Keep the work directory under your home directory when using Colima so containers can access it.
 
 ### Inputs
 
@@ -107,7 +108,7 @@ Main parameters:
 ### Run
 
 ```bash
-NXF_VER=25.10.4 nextflow run jam-sudo/ngspipeline -r 1.0.4 -profile docker,local \
+NXF_VER=25.10.4 nextflow run jam-sudo/ngspipeline -r 1.0.5 -profile docker,local \
    --input samplesheet.csv --guides guide_library.csv \
    --reference_index /path/to/kb_index --chemistry 10XV3 \
    -params-file assign_params.yml \
@@ -219,6 +220,8 @@ Module tests live under `modules/local/*/tests`; the end-to-end pipeline test li
 jam-sudo/ngspipeline was written by Jae Min Yoon.
 
 ## Citations
+
+If you use jam-sudo/ngspipeline for your analysis, please cite it using the following DOI: [10.5281/zenodo.23933776](https://doi.org/10.5281/zenodo.23933776). It always resolves to the latest archived release; each release also has its own version DOI on Zenodo.
 
 Data used for testing and validation: Replogle et al. 2022, _Cell_ 185(14):2559–2575, [doi:10.1016/j.cell.2022.05.013](https://doi.org/10.1016/j.cell.2022.05.013) (SRA PRJNA831566; processed data CC BY 4.0).
 
