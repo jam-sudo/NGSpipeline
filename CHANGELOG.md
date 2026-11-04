@@ -15,6 +15,10 @@ Citation patch; no change to pipeline logic, parameters or outputs.
 
 - Version 1.0.5 in `nextflow.config`, `.nf-core.yml`, the pipeline snapshot and the README run commands.
 
+### `Fixed`
+
+- Branch check in `.github/workflows/branch.yml` uses the repository's new name `jam-sudo/NGSpipeline` (the bash comparison is case-sensitive).
+
 ## v1.0.4 - [2026-11-02]
 
 Repository-hygiene patch and the first release archived on Zenodo; no change to pipeline logic, parameters or outputs.
