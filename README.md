@@ -10,6 +10,7 @@
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
 [![GitHub release](https://img.shields.io/github/v/release/jam-sudo/ngspipeline)](https://github.com/jam-sudo/ngspipeline/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23933776.svg)](https://doi.org/10.5281/zenodo.23933776)
 [![Launch on Seqera Platform](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Seqera%20Platform-%234256e7)](https://cloud.seqera.io/launch?pipeline=https://github.com/jam-sudo/ngspipeline)
 
 ## Introduction
@@ -219,6 +220,8 @@ Module tests live under `modules/local/*/tests`; the end-to-end pipeline test li
 jam-sudo/ngspipeline was written by Jae Min Yoon.
 
 ## Citations
+
+If you use jam-sudo/ngspipeline for your analysis, please cite it using the following DOI: [10.5281/zenodo.23933776](https://doi.org/10.5281/zenodo.23933776). It always resolves to the latest archived release; each release also has its own version DOI on Zenodo.
 
 Data used for testing and validation: Replogle et al. 2022, _Cell_ 185(14):2559–2575, [doi:10.1016/j.cell.2022.05.013](https://doi.org/10.1016/j.cell.2022.05.013) (SRA PRJNA831566; processed data CC BY 4.0).
 
