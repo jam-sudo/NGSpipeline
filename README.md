@@ -15,7 +15,11 @@
 
 ## Introduction
 
-**Latest release: tag [`1.0.5`](https://github.com/jam-sudo/ngspipeline/releases/tag/1.0.5)** (run it with `-r 1.0.5`); development continues on `dev`.
+- **~96 % guide concordance on 12 lanes.** Per-cell guide assignment matches the authors' published calls for 95.3–96.3 % of their cells in each of 12 GEM groups of Replogle 2022 K562 essential-scale (96.0 % on `lane_4`). [Validation](#validation)
+- **Byte-identical output across environments.** The `lane_4` `.h5ad` has the same sha256 from `local,docker`, from `slurm,singularity` and from inside the 12-lane SLURM run. [Validation](#validation)
+- **28 min per lane.** One full lane (235 M GEX read pairs) with `slurm,singularity` on a single 28-core node. [Run statistics](#run-statistics)
+
+**Latest release: tag [`1.0.6`](https://github.com/jam-sudo/ngspipeline/releases/tag/1.0.6)** (run it with `-r 1.0.6`); development continues on `dev`.
 
 **jam-sudo/ngspipeline** turns raw Perturb-seq reads into an analysis-ready dataset for [ALIVE](https://github.com/jam-sudo/alive): FASTQ → gene-expression (GEX) and sgRNA count matrices → per-cell guide assignment → an ALIVE-ready `.h5ad`. It is a Nextflow DSL2 pipeline built on the nf-core template and nf-core modules; the four steps that have no nf-core module are hand-written local modules.
 
@@ -67,11 +71,11 @@ docker info
 Run the released pipeline on the bundled real-read test data before using your own inputs:
 
 ```bash
-NXF_VER=25.10.4 nextflow run jam-sudo/ngspipeline -r 1.0.5 \
+NXF_VER=25.10.4 nextflow run jam-sudo/ngspipeline -r 1.0.6 \
   -profile test,docker --outdir results/test
 ```
 
-On Apple Silicon, add `emulate_amd64` to the profiles (`test,docker,emulate_amd64`) to explicitly select the amd64 containers. For a local checkout, replace `jam-sudo/ngspipeline -r 1.0.5` with `.`; this runs the checked-out code, including development changes. Keep the work directory under your home directory when using Colima so containers can access it.
+On Apple Silicon, add `emulate_amd64` to the profiles (`test,docker,emulate_amd64`) to explicitly select the amd64 containers. For a local checkout, replace `jam-sudo/ngspipeline -r 1.0.6` with `.`; this runs the checked-out code, including development changes. Keep the work directory under your home directory when using Colima so containers can access it.
 
 ### Inputs
 
@@ -108,7 +112,7 @@ Main parameters:
 ### Run
 
 ```bash
-NXF_VER=25.10.4 nextflow run jam-sudo/ngspipeline -r 1.0.5 -profile docker,local \
+NXF_VER=25.10.4 nextflow run jam-sudo/ngspipeline -r 1.0.6 -profile docker,local \
    --input samplesheet.csv --guides guide_library.csv \
    --reference_index /path/to/kb_index --chemistry 10XV3 \
    -params-file assign_params.yml \
