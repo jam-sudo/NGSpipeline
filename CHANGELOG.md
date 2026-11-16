@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## v1.1.0dev - [unreleased]
 
+### `Changed`
+
+- README: three-line summary of the headline results (guide concordance, byte-identical h5ad, run time) at the top of the Introduction.
+
 ## v1.0.5 - [2026-11-03]
 
 Citation patch; no change to pipeline logic, parameters or outputs.

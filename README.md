@@ -15,6 +15,10 @@
 
 ## Introduction
 
+- **~96 % guide concordance on 12 lanes.** Per-cell guide assignment matches the authors' published calls for 95.3–96.3 % of their cells in each of 12 GEM groups of Replogle 2022 K562 essential-scale (96.0 % on `lane_4`). [Validation](#validation)
+- **Byte-identical output across environments.** The `lane_4` `.h5ad` has the same sha256 from `local,docker`, from `slurm,singularity` and from inside the 12-lane SLURM run. [Validation](#validation)
+- **28 min per lane.** One full lane (235 M GEX read pairs) with `slurm,singularity` on a single 28-core node. [Run statistics](#run-statistics)
+
 **Latest release: tag [`1.0.5`](https://github.com/jam-sudo/ngspipeline/releases/tag/1.0.5)** (run it with `-r 1.0.5`); development continues on `dev`.
 
 **jam-sudo/ngspipeline** turns raw Perturb-seq reads into an analysis-ready dataset for [ALIVE](https://github.com/jam-sudo/alive): FASTQ → gene-expression (GEX) and sgRNA count matrices → per-cell guide assignment → an ALIVE-ready `.h5ad`. It is a Nextflow DSL2 pipeline built on the nf-core template and nf-core modules; the four steps that have no nf-core module are hand-written local modules.
