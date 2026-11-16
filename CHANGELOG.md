@@ -3,11 +3,14 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v1.1.0dev - [unreleased]
+## v1.0.6 - [2026-11-15]
+
+Documentation patch; no change to pipeline logic, parameters or outputs.
 
 ### `Changed`
 
 - README: three-line summary of the headline results (guide concordance, byte-identical h5ad, run time) at the top of the Introduction.
+- Version 1.0.6 in `nextflow.config`, `.nf-core.yml`, the pipeline snapshot and the README run commands.
 
 ## v1.0.5 - [2026-11-03]
 
